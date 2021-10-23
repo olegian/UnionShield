@@ -1,0 +1,6 @@
+Database Access:
+	username: admin
+	password: Nf9V5rsPLslnKt1H
+
+Connection string:
+	mongodb+srv://admin:Nf9V5rsPLslnKt1H@unionshield.e4bpp.mongodb.net/UnionShield?retryWrites=true&w=majority
