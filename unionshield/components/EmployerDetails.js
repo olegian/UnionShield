@@ -19,7 +19,7 @@ export default function SurveyContent(props) {
     };
 
     return (
-        <>
+        <Container className="background">
             <div className="m-0 p-3">
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary
@@ -176,6 +176,19 @@ export default function SurveyContent(props) {
                     </AccordionDetails>
                 </Accordion>
             </div>
-        </>
+            <style jsx>{`
+                    .background{
+                        min-height: 80vh;
+                        text-align: center;
+                        padding: 5% 5% 0% 5%;
+                        background-image: url("landingphoto.png");
+                    } 
+                    .mainbutton{
+                        height: "100px";
+                        width: "100px";
+                    } 
+                `}</style>     
+        </Container>
+        
     );
 }

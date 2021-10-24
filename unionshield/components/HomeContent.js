@@ -6,7 +6,7 @@ export default class HomeContent extends React.Component {
         return (
             <>
                 <div className="content">
-                    <Card className="cardstyle">
+                    <Card className="cardstyle"  style={{width: "1000px", marginLeft:"auto", marginRight:"auto"}}>
                         <CardBody style={{fontSize:18}}>
                             <CardTitle style={{fontSize:43, height:53}}>The labor movement is in full swing.</CardTitle>
                             <CardSubtitle style={{fontSize:33, height:43}}>The time to act is now.</CardSubtitle>
@@ -25,7 +25,7 @@ export default class HomeContent extends React.Component {
                     </Card>
 
 
-                    <Card className="cardstyle mt-5">
+                    <Card className="cardstyle mt-5" style={{width: "1000px", marginLeft:"auto", marginRight:"auto"}}>
                         <CardBody><CardTitle style={{fontSize:43, height:70}}>Benefits of Unionization:</CardTitle>
                         <CardSubtitle style={{fontSize:33, height:35}}>Increase in Wage</CardSubtitle>
                         Union workers earn, on average, 11.2% more than their non-union counterparts, and reduced the income inequality by 33-37%</CardBody>
@@ -36,7 +36,7 @@ export default class HomeContent extends React.Component {
                     </Card>
 
 
-                    <Card className="cardstyle mt-5">
+                    <Card className="cardstyle mt-5" style={{width: "1000px", marginLeft:"auto", marginRight:"auto"}}>
                         <CardBody style = {{height:310}}>
                             <CardTitle style={{fontSize:43, height:70}}>Your Rights:</CardTitle>
                             <CardSubtitle style={{fontSize:33, height:70}}>Right to be paid properly</CardSubtitle>
@@ -48,7 +48,7 @@ export default class HomeContent extends React.Component {
                     
 
 
-                    <Card className="cardstyle mt-5">
+                    <Card className="cardstyle mt-5" style={{width: "1000px", marginLeft:"auto", marginRight:"auto"}}>
                         <CardBody>
                             <CardTitle style={{fontSize:43}}>Take Action</CardTitle>
                         </CardBody>
