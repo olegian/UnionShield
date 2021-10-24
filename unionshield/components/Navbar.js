@@ -14,6 +14,7 @@ import {
     Button
 } from 'shards-react';
 
+
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -47,8 +48,9 @@ export default class NavBar extends React.Component {
     render(){
         return(
             <div className="outer sticky-top">
-                <Navbar type="dark" theme="" expand="md" className="background sticky-top">
-                    <NavbarBrand href="/" className="background">Union Shield</NavbarBrand>
+                <Navbar type="light" theme="" expand="md" className="background sticky-top">
+                    <NavLink href="/" className="background"><img className="headerlogo" src="/largelogo.png"></img></NavLink>
+
                     <NavbarToggler onClick={this.toggleNavbar} />
 
                     <Collapse open={this.state.collapseOpen} navbar>
@@ -60,7 +62,7 @@ export default class NavBar extends React.Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink active href="/page1">
-                                    page1
+                                    HELLO
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -96,8 +98,11 @@ export default class NavBar extends React.Component {
                         position: sticky-top;                 
                     }     
                     .background{
-                        background-color: #01245c;
-                    }           
+                        background-color: #b9d6f2;
+                    }  
+                    .headerlogo{
+                        height: 50px;
+                    }         
                 `}</style>
             </div>
         );
