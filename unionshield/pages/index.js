@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import Navbar from '../components/Navbar'
-import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
+import Landing from '../components/Landing'
+import HomeContent from '../components/HomeContent'
+import Footer from '../components/Footer'
+import React from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "shards-ui/dist/css/shards.min.css"
 
 export default function Home({ movies }) {
   
@@ -12,20 +16,18 @@ export default function Home({ movies }) {
         <title>Union Shield</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Navbar />
-      <main>
-        
-        <h1 className="title">
-          Union Shield
-        </h1>
-        <div className="flex flex-wrap">
-          {movies && movies.map(movie => (
-            <div>
-              <h2>{movie.title}</h2>
-            </div>
-          ))}
+      <Landing />
+      <HomeContent />
+      <div className="flex flex-wrap">
+            {movies && movies.map(movie => (
+                <div>
+                <h2>{movie.title}</h2>
+                </div>
+            ))}
         </div>
-      </main>
+      <Footer />
 
       <footer>
         <p>Created by The Fellas</p>
@@ -183,7 +185,6 @@ export default function Home({ movies }) {
     </div>
   )
 }
-
 export async function getServerSideProps(context) {
   const client = await clientPromise
   const db = client.db("sample_mflix");
@@ -201,3 +202,4 @@ export async function getServerSideProps(context) {
     props: { movies },
   }
 }
+
