@@ -61,6 +61,11 @@ export default class NavBar extends React.Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink active href="/employers">
+                                    Employer Search
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink active href="/fullsurvey">
                                     Full Survey
                                 </NavLink>

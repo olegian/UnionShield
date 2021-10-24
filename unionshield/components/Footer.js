@@ -7,14 +7,14 @@ export default class HomeContent extends React.Component {
             <>
             <div className="footer">
                 <div className="row align-items-end">
-                    <div className="col">
+                    <div className="col" href="/index">
                         <img className="icon" src="largelogo.png"></img>
                     </div>
                     <div className="col">
-                        <Button style={{height: '40px', width : '100%'}} outline theme="dark">Employer search</Button>
+                        <Button style={{height: '40px', width : '100%'}} href="/employers" outline theme="dark">Employer search</Button>
                     </div>
                     <div className="col">
-                        <Button style={{height: '40px', width : '100%'}} outline theme="dark">Take the survey</Button>
+                        <Button style={{height: '40px', width : '100%'}} href="/fullsurvey" outline theme="dark">Take the survey</Button>
                     </div>
                     <div className="col">
                         <h6 >Made by the fellas</h6>

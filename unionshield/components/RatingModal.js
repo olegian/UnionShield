@@ -18,7 +18,7 @@ class RatingModal extends React.Component {
                 <Container>
                     <Row className="sm align-items-center">
                         <Col>
-                            <Button type="button" href="" style={{height: '40px', width : '200px'}} className="vertbutton" outline theme="dark">
+                            <Button type="button" href="/fullsurvey" style={{height: '40px', width : '200px'}} className="vertbutton" outline theme="dark">
                                 Take Full Survey
                             </Button>
                         </Col>
