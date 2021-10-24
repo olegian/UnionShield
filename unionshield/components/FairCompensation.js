@@ -19,12 +19,26 @@ export default class FairCompensation extends React.Component {
     }
     add1 = () => {
         var n = this.state.points;
-        n += 5
+        n += 1
         this.setState({
             points: n
         });
     }
-    
+    add3 = () => {
+        var n = this.state.points;
+        n += 3
+        this.setState({
+            points: n
+        });
+    }
+    add10 = () => {
+        var n = this.state.points;
+        n += 3
+        this.setState({
+            points: n
+        });
+    }
+     
 
     render() {
         return (
@@ -35,32 +49,43 @@ export default class FairCompensation extends React.Component {
                         <p>Are you paid at or above your state's minimum wage?</p>
                         <Container>
                             <Row>
-                                <Col><Button onClick={this.add5}>Yes</Button></Col>
-                                <Col><Button>No</Button></Col>
+                                <Col><Button outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
                             </Row>
                         </Container>
                     </div>
 
                     <div className="m-5 ">
-                        <p>Are you paid at or above your state's minimum wage?</p>
+                        <p>How many hours a week do you work?</p>
                         <Container>
                             <Row>
-                                <Col><Button onClick={this.add5}>Yes</Button></Col>
-                                <Col><Button>No</Button></Col>
+                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Less than 40</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>More than 40</Button></Col>
                             </Row>
                         </Container>
                     </div>
 
                     <div className="m-5 ">
-                        <p>Are you paid at or above your state's minimum wage?</p>
+                        <p>Do you (or your coworkers) receive overtime pay during a 40+ hour work week?</p>
                         <Container>
                             <Row>
-                                <Col><Button onClick={this.add5}>Yes</Button></Col>
-                                <Col><Button>No</Button></Col>
+                                <Col><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Not Sure</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
                             </Row>
                         </Container>
                     </div>
 
+                    <div className="m-5 ">
+                        <p>Do you believe you have received unfair compensation for your work?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add10} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+    
+                            </Row>
+                        </Container>
+                    </div>
 
                     <CardFooter>    
                         <Button>Submit</Button>
