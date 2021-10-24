@@ -1,7 +1,7 @@
-import React from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle, CardFooter } from "shards-react";
+import react from 'react';
+import { container, row, col, button, card, cardbody, cardtitle, cardsubtitle, cardfooter } from "shards-react";
 
-export default class FairCompensation extends React.Component {
+export default class WorkplaceEquality extends React.Component {
     constructor(props){
         super(props);
         this.state ={
@@ -43,11 +43,72 @@ export default class FairCompensation extends React.Component {
     render() {
         return (
             <>
-            <h1>Fair Compensation</h1>
+            <h1>Workplace Equality</h1>
                 <Card className="content m-5 p-5">
                     
                     <div className="m-5 ">
-                        <p>Are you paid at or above your state's minimum wage?</p>
+                        <p>Have you ever felt discriminated against on the basis of your race?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    
+                    <div className="m-5 ">
+                        <p>Have you ever felt discriminated against on the basis of your sex or gender?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+
+                    <div className="m-5 ">
+                        <p>Have you ever felt discriminated against on the basis of your sexual orientation?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+
+                    <div className="m-5 ">
+                        <p>Have you ever felt discriminated against on the basis of your religion?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    
+                    <div className="m-5 ">
+                        <p>Have you ever been harrassed (including being called slurs, unwanted advances, or even simply ridicule)?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+
+                    <div className="m-5 ">
+                        <p>Have you ever filed a discrimination report with an official federal agency?</p>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>No, I haven't felt the need to</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>No, I feared repercussions</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                            </Row>
+                        </Container>
+                    </div>
+                    
+                    <div className="m-5 ">
+                        <p>If you wanted to quit your job, would you be able to do so without complications?</p>
                         <Container>
                             <Row>
                                 <Col><Button outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
@@ -56,70 +117,6 @@ export default class FairCompensation extends React.Component {
                         </Container>
                     </div>
 
-                    <div className="m-5 ">
-                        <p>How many hours a week do you work?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Less than 40</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>More than 40</Button></Col>
-                            </Row>
-                        </Container>
-                    </div>
-
-                    <div className="m-5 ">
-                        <p>Do you (or your coworkers) receive overtime pay during a 40+ hour work week?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Not sure</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
-                            </Row>
-                        </Container>
-                    </div>
-
-                    <div className="m-5 ">
-                        <p>Do you believe you have received unfair compensation for your work?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add10} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
-    
-                            </Row>
-                        </Container>
-                    </div>
-                    
-                    <div className="m-5 ">
-                        <p>Do you believe you would be fired or demoted if you took an up to 12 weeks of unpaid sick/medical leave a year?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Not sure</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
-                            </Row>
-                        </Container>
-                    </div>
-                    
-                    <div className="m-5 ">
-                        <p>Have you ever attempted to file a report regarding unfair pay?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>Never wanted / tried to</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add1} outline style="dark" style={{height: '40px', width : '80%'}}>Yes, but I fear repercussions</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
-                            </Row>
-                        </Container>
-                    </div>
-                    
-                    <div className="m-5 ">
-                        <p>Have you ever reviewed your wage records as kept by your employer?</p>
-                        <Container>
-                            <Row>
-                                <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>No, I fear repercussions</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
-                            </Row>
-                        </Container>
-                    </div>
 
                     <CardFooter>    
                         <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
