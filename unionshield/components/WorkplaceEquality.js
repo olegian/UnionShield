@@ -123,7 +123,7 @@ export default class WorkplaceEquality extends React.Component {
 
 
                     <CardFooter>    
-                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit</Button>
+                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit Section</Button>
                     </CardFooter>
                 </Card>
                 <style jsx>{`

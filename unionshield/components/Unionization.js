@@ -82,7 +82,7 @@ export default class Unionization extends React.Component {
                     </div>
 
                     <CardFooter>    
-                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit</Button>
+                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit Section</Button>
                     </CardFooter>
                 </Card>
                 <style jsx>{`
