@@ -7,9 +7,14 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "shards-ui/dist/css/shards.min.css"
 import ChooseEmployer from '../components/ChooseEmployer'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import { Card, CardFooter, Button } from 'shards-react'
+import { calculateObjectSize } from 'bson'
 
 export default class FullSurvey extends React.Component {
     constructor({ employers }){
@@ -19,6 +24,7 @@ export default class FullSurvey extends React.Component {
         db: employers,
         arrScores: [-1, -1, -1, -1],
         employerInput: '',
+        showResults: false,
       }
     }
 
@@ -29,7 +35,14 @@ export default class FullSurvey extends React.Component {
     }
 
     changeInput = (name) =>{
-      this.setState({employerInput: name});
+      this.setState({employerInput: 'Amazon'});
+      this.calculate();
+    }
+
+    calculate = () =>{
+      this.setState({
+        showResults: true,
+      })
     }
 
     render(){
@@ -42,7 +55,31 @@ export default class FullSurvey extends React.Component {
 
             <Navbar />
             <SurveyContent type="full" changeArray={this.changeArray} />
-            <ChooseEmployer changeInput={this.changeInput} db={this.state.employers} />
+            {/* <ChooseEmployer changeInput={this.changeInput} db={this.state.employers} /> */}
+            <Card className="m-5 p-5">
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Employer</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Age"
+                >
+                  {this.state.db && this.state.db.map(employer => (
+                        <MenuItem value={employer.employerName}>{employer.employerName}</MenuItem>
+                    ))}
+                </Select>
+              </FormControl>
+              <Button onClick={this.changeInput}>Submit Report</Button>
+            </Card>
+
+            {this.state.showResults &&
+              <Card className="content m-5 p-5">
+                <h2>Your ESS score for {this.state.employerInput} is:
+                {this.state.arrScores[0]+this.state.arrScores[1]+this.state.arrScores[2]+this.state.arrScores[3]}%</h2>
+                <Button>View current ESS scores for {this.state.employerInput}</Button>
+              </Card>
+            }
+
             <div className="flex flex-wrap">
                   {this.state.db && this.state.db.map(employer => (
                       <div>
@@ -50,6 +87,7 @@ export default class FullSurvey extends React.Component {
                       </div>
                   ))}
             </div>
+            
             <Footer />
 
             <style jsx>{`
