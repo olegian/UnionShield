@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ModalBody, ModalHeader } from "shards-react";
+import { Modal, ModalBody, ModalHeader, Button, Row, Col, Container } from "shards-react";
 
 class RatingModal extends React.Component {
   constructor(props) {
@@ -9,16 +9,38 @@ class RatingModal extends React.Component {
   render() {
     return (
       <>
-        <Modal open={this.props.open} toggle={this.props.toggle}>
+        <Modal className="modal-lg" open={this.props.open} toggle={this.props.toggle}>
           <ModalHeader>
-              <h5>title</h5>
+              <h5>Rate your employer</h5>
               <button className='close' onClick={this.props.toggle}>&times;</button>
           </ModalHeader>
           <ModalBody>
-              
+                <Container>
+                    <Row className="sm">
+                        <Col>
+                            <Button type="button" href="" style={{height: '40px', width : '400px'}} className="mainbutton" outline theme="dark">
+                                Butun
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button type="button" href="" style={{height: '40px', width : '400px'}} className="mainbutton" outline theme="dark">
+                                Lots
+                            </Button>
+                            <Button type="button" href="" style={{height: '40px', width : '400px'}} className="mainbutton" outline theme="dark">
+                                of
+                            </Button>
+                            <Button type="button" href="" style={{height: '40px', width : '400px'}} className="mainbutton" outline theme="dark">
+                                but
+                            </Button>
+                        </Col>  
+                    </Row>
+                </Container>
           </ModalBody>
         </Modal>
         <style jsx>{`
+            modal{
+                
+            }
             h5 {
                 display: inline;
             }
