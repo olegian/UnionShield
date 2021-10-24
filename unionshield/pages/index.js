@@ -14,6 +14,13 @@ export default function Home({ movies }) {
         <h1 className="title">
           Union Shield
         </h1>
+        <div className="flex flex-wrap">
+          {movies && movies.map(movie => (
+            <div>
+              <h2>{movie.title}</h2>
+            </div>
+          ))}
+        </div>
       </main>
 
       <footer>
