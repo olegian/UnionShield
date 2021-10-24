@@ -61,7 +61,7 @@ export default class NavBar extends React.Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink active href="/page1">
+                                <NavLink active href="/fullsurvey">
                                     Full Survey
                                 </NavLink>
                             </NavItem>
@@ -72,10 +72,10 @@ export default class NavBar extends React.Component {
                             >
                                 <DropdownToggle nav split/>
                                 <DropdownMenu>
-                                    <DropdownItem href="/">Compensation</DropdownItem>
-                                    <DropdownItem href="/">Health + Safety</DropdownItem>
-                                    <DropdownItem href="/">Workplace Equality</DropdownItem>
-                                    <DropdownItem href="/">Unionization</DropdownItem>
+                                    <DropdownItem href="/faircompensation">Compensation</DropdownItem>
+                                    <DropdownItem href="/healthsafety">Health + Safety</DropdownItem>
+                                    <DropdownItem href="/workplaceequality">Workplace Equality</DropdownItem>
+                                    <DropdownItem href="/unionization">Unionization</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
                         </Nav>
