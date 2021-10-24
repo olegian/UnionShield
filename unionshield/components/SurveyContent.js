@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Button} from "shards-react";
 import FairCompensation from '../components/FairCompensation'
+import HealthSafety from './HealthSafety';
+import Unionization from './Unionization';
+import WorkplaceEquality from './WorkplaceEquality';
 
 
 export default function SurveyContent(props) {
@@ -8,12 +11,25 @@ export default function SurveyContent(props) {
         <>
             <div className="surveycontent">
                 {(props.type=="full" || props.type=="fairCompensation") &&
-                <FairCompensation />               
+                    <FairCompensation />               
                 }
+
+                {(props.type=="full" || props.type=="healthSafety") &&
+                    <HealthSafety />               
+                }
+
+                {(props.type=="full" || props.type=="workplaceEquality") &&
+                    <WorkplaceEquality />               
+                }
+                
+                {(props.type=="full" || props.type=="unionization") &&
+                    <Unionization />               
+                }
+
             </div>
             <style jsx>{`
                 .surveycontent{
-                    min-height: 80vh;
+                    min-height: 100vh;
                     text-align: center;
                     padding: 5% 5% 0% 5%;
                     background-image: url("landingphoto.png");

@@ -23,16 +23,16 @@ class RatingModal extends React.Component {
                             </Button>
                         </Col>
                         <Col style={{borderLeft:"1px solid black"}}>
-                            <Button type="button" href="" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
+                            <Button type="button" href="/faircompensation" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
                                 Fair Compensation 
                             </Button>
-                            <Button  type="button" href="" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
+                            <Button  type="button" href="/healthsafety" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
                                 Safety + Health
                             </Button>
-                            <Button type="button" href="" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
+                            <Button type="button" href="/workplaceequality" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
                                 Workplace Equality
                             </Button>
-                            <Button type="button" href="" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
+                            <Button type="button" href="/unionization" style={{height: '40px', width : '200px'}} className="m-2" outline theme="dark">
                                 Unionization
                             </Button>
                         </Col>  

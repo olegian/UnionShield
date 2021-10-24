@@ -1,5 +1,5 @@
-import react from 'react';
-import { container, row, col, button, card, cardbody, cardtitle, cardsubtitle, cardfooter } from "shards-react";
+import React from 'react';
+import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle, CardFooter } from "shards-react";
 
 export default class WorkplaceEquality extends React.Component {
     constructor(props){
@@ -122,7 +122,6 @@ export default class WorkplaceEquality extends React.Component {
                         <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
                     </CardFooter>
                 </Card>
-                <p>Points = {this.state.points}</p>
                 <style jsx>{`
                     .content{
                         width: 100%;

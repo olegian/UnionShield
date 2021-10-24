@@ -5,7 +5,7 @@ export default class FairCompensation extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            points: 1,
+            points: 0,
         }
         this.add5 = this.add5.bind(this);
     }
@@ -50,7 +50,7 @@ export default class FairCompensation extends React.Component {
                         <p>Are you paid at or above your state's minimum wage?</p>
                         <Container>
                             <Row>
-                                <Col><Button outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
+                                <Col><Button onClick={this.question1} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
                                 <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add5} outline style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
                             </Row>
                         </Container>
@@ -125,7 +125,7 @@ export default class FairCompensation extends React.Component {
                         <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
                     </CardFooter>
                 </Card>
-                <p>Points = {this.state.points}</p>
+                <p>points = {this.state.points}</p>
                 <style jsx>{`
                     .content{
                         width: 100%;

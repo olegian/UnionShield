@@ -1,5 +1,5 @@
-import react from 'react';
-import { container, row, col, button, card, cardbody, cardtitle, cardsubtitle, cardfooter } from "shards-react";
+import React from 'react';
+import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle, CardFooter } from "shards-react";
 
 export default class HealthSafety extends React.Component {
     constructor(props){
@@ -61,7 +61,7 @@ export default class HealthSafety extends React.Component {
                         <Container>
                             <Row>
                                 <Col><Button outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add10} style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" onClick={this.add10} style="dark" style={{height: '40px', width : '80%'}}>Yes</Button></Col>
                             </Row>
                         </Container>
                     </div>
@@ -81,7 +81,7 @@ export default class HealthSafety extends React.Component {
                         <Container>
                             <Row>
                                 <Col><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>No</Button></Col>
-                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes, I did not recieve training</Button></Col>
+                                <Col style={{borderLeft:"1px solid black"}}><Button outline style="dark" style={{height: '40px', width : '80%'}}>Yes, without training</Button></Col>
                                 <Col style={{borderLeft:"1px solid black"}}><Button onClick={this.add3} outline style="dark" style={{height: '40px', width : '80%'}}>Yes, I recieved training</Button></Col>
     
                             </Row>
@@ -114,7 +114,6 @@ export default class HealthSafety extends React.Component {
                         <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
                     </CardFooter>
                 </Card>
-                <p>Points = {this.state.points}</p>
                 <style jsx>{`
                     .content{
                         width: 100%;
