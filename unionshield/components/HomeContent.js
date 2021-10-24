@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle } from "shards-react";
+import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle, CardHeader, CardImg } from "shards-react";
 
 export default class HomeContent extends React.Component {
     render() {
@@ -45,6 +45,42 @@ export default class HomeContent extends React.Component {
                             <CardSubtitle style={{fontSize:33, height:70}}>Right to join with coworkers</CardSubtitle>
                         </CardBody>
                     </Card>
+                    
+
+
+                    <Card className="cardstyle mt-5">
+                        <CardBody>
+                            <CardTitle style={{fontSize:43}}>Take Action</CardTitle>
+                        </CardBody>
+                    </Card>
+                    
+                    <Container>
+                        <Row>
+                            <Col>
+                                <Card className="halfcard mt-1">
+                                    <CardHeader><CardTitle>Make Amendments to the NLRB</CardTitle></CardHeader>
+                                    <CardImg style={{width: 539, height: 539}} src="nlrb-logo.png" />
+                                    <CardBody>
+                                    Push the National Labor Relations Board (NLRB) to expand access for workers to discuss 
+                                        unionization at the workplace, establish remedies when employers stall bargaining, and much more.
+                                    </CardBody>
+                                </Card>
+                            </Col>
+
+                            <Col>
+                                <Card className="halfcard mt-1">
+                                    <CardHeader><CardTitle>Pass Progressive Labor Legislation</CardTitle></CardHeader>
+                                    <CardImg style={{width: 539, height: 350}} src="ProAct.png" />
+                                    <CardBody>
+                                    Passing legislation like the Protecting the Right to Organize (PRO) Act of 2021, the Public Service 
+                                        Freedom to Negotiate Act, and the Public Safety Employer-Employee Cooperation Act will enable 
+                                        unions to effectively voice their opinions and guarantee that their needs are met. Vote today!
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Container>
+                    
 
 
                 </div>
@@ -56,6 +92,12 @@ export default class HomeContent extends React.Component {
                     }  
                     .cardstyle{
                         width: 40%;
+                    }
+                    .halfcard{
+                        width: 50%;
+                    }
+                    .picture{
+                        height: 50px;
                     }
                 `}</style>
             </>
