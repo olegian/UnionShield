@@ -62,17 +62,7 @@ export default class NavBar extends React.Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink active href="/page1">
-                                    HELLO
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink active href="/page2">
-                                    page2
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink active href="/page3">
-                                    page3
+                                    Full Survey
                                 </NavLink>
                             </NavItem>
                             <Dropdown
@@ -80,14 +70,12 @@ export default class NavBar extends React.Component {
                                 toggle={this.toggleDropdown}
                                 group
                             >
-                                <NavItem>
-                                    <NavLink active href="/page4">
-                                        idk
-                                    </NavLink>
-                                </NavItem>
                                 <DropdownToggle nav split/>
                                 <DropdownMenu>
-                                    <DropdownItem href="/">jasdhfkjdhsf</DropdownItem>
+                                    <DropdownItem href="/">Compensation</DropdownItem>
+                                    <DropdownItem href="/">Health + Safety</DropdownItem>
+                                    <DropdownItem href="/">Workplace Equality</DropdownItem>
+                                    <DropdownItem href="/">Unionization</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
                         </Nav>

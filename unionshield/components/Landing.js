@@ -27,7 +27,10 @@ export default class Landing extends React.Component {
                             <h1 className="pt-5"> Diagnose your employer. </h1>
                             <Col md={6} className="m-0 p-0">
                                 <h4> Anonymous submission. Endless support. </h4>
-                                <Button type="button" onClick={this.toggle} style={{height: '40px', width : '400px'}} className="mainbutton" outline theme="dark">
+                                <Button type="button" onClick={this.toggle} style={{height: '40px', width : '400px'}} className="mainbutton mt-5" outline theme="dark">
+                                    Take the Survey
+                                </Button>
+                                <Button type="button" onClick={this.toggle} style={{height: '40px', width : '400px'}} className="mainbutton mt-2" outline theme="dark">
                                     Learn about your employer
                                 </Button>
                             </Col>
