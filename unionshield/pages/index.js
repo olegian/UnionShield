@@ -1,18 +1,20 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import Navbar from '../components/Navbar'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
 
 export default function Home({ movies }) {
   
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Union Shield</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <main>
-        <Navbar />
+        
         <h1 className="title">
           Union Shield
         </h1>
