@@ -7,7 +7,11 @@ export default class FairCompensation extends React.Component {
         this.state ={
             points: 0,
         }
-        this.add5 = this.add5.bind(this);
+        this.handleClick.bind(this);
+    }
+
+    handleClick = () => {
+        this.props.submit(this.state.points, 0);
     }
 
     add5 = () => {
@@ -122,10 +126,9 @@ export default class FairCompensation extends React.Component {
                     </div>
 
                     <CardFooter>    
-                        <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
+                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit</Button>
                     </CardFooter>
                 </Card>
-                <p>points = {this.state.points}</p>
                 <style jsx>{`
                     .content{
                         width: 100%;

@@ -4,45 +4,19 @@ import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardSubtitle, C
 export default class Unionization extends React.Component {
     constructor(props){
         super(props);
-        this.state ={
-            points: 0,
-        }
         this.handleClick.bind(this);
+        this.state={
+            name: '',
+        }
     }
 
-    handleClick = () => {
-        this.props.submit(this.state.points, 3);
-    }
-
-    add5 = () => {
-        var n = this.state.points;
-        n += 5
+    handleClick = (n) =>{
         this.setState({
-            points: n
-        });
+            name: n
+        })
+        this.props.changeInput(this.state.name);
     }
-    add1 = () => {
-        var n = this.state.points;
-        n += 1
-        this.setState({
-            points: n
-        });
-    }
-    add3 = () => {
-        var n = this.state.points;
-        n += 3
-        this.setState({
-            points: n
-        });
-    }
-    add10 = () => {
-        var n = this.state.points;
-        n += 3
-        this.setState({
-            points: n
-        });
-    }
-     
+    
 
     render() {
         return (

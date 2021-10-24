@@ -6,39 +6,51 @@ import Unionization from './Unionization';
 import WorkplaceEquality from './WorkplaceEquality';
 
 
-export default function SurveyContent(props) {
-    return (
-        <>
-            <div className="surveycontent">
-                {(props.type=="full" || props.type=="fairCompensation") &&
-                    <FairCompensation />               
-                }
+export default class SurveyContent extends React.Component {
+    constructor(props){
+        super(props);
+        this.submit.bind(this);
+    }
 
-                {(props.type=="full" || props.type=="healthSafety") &&
-                    <HealthSafety />               
-                }
+    submit = (value, index) => {
+        this.props.changeArray(value, index);
+    }
 
-                {(props.type=="full" || props.type=="workplaceEquality") &&
-                    <WorkplaceEquality />               
-                }
-                
-                {(props.type=="full" || props.type=="unionization") &&
-                    <Unionization />               
-                }
+    render(){
+        return (
+            <>
+                <div className="surveycontent">
 
-            </div>
-            <style jsx>{`
-                .surveycontent{
-                    min-height: 100vh;
-                    text-align: center;
-                    padding: 5% 5% 0% 5%;
-                    background-image: url("landingphoto.png");
-                } 
-                .mainbutton{
-                    height: "100px";
-                    width: "100px";
-                } 
-            `}</style>
-        </>
-    );
+                    {(this.props.type=="full" || this.props.type=="fairCompensation") &&
+                        <FairCompensation submit={this.submit}/>               
+                    }
+
+                    {(this.props.type=="full" || this.props.type=="healthSafety") &&
+                        <HealthSafety submit={this.submit}/>               
+                    }
+
+                    {(this.props.type=="full" || this.props.type=="workplaceEquality") &&
+                        <WorkplaceEquality submit={this.submit}/>               
+                    }
+                    
+                    {(this.props.type=="full" || this.props.type=="unionization") &&
+                        <Unionization submit={this.submit}/>               
+                    }
+
+                </div>
+                <style jsx>{`
+                    .surveycontent{
+                        min-height: 100vh;
+                        text-align: center;
+                        padding: 5% 5% 0% 5%;
+                        background-image: url("landingphoto.png");
+                    } 
+                    .mainbutton{
+                        height: "100px";
+                        width: "100px";
+                    } 
+                `}</style>
+            </>
+        );
+    }
 }

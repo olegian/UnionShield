@@ -5,9 +5,13 @@ export default class WorkplaceEquality extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            points: 1,
+            points: 0,
         }
-        this.add5 = this.add5.bind(this);
+        this.handleClick.bind(this);
+    }
+
+    handleClick = () => {
+        this.props.submit(this.state.points, 2);
     }
 
     add5 = () => {
@@ -119,7 +123,7 @@ export default class WorkplaceEquality extends React.Component {
 
 
                     <CardFooter>    
-                        <Button outline style="dark" style={{height: '40px', width : '80%'}}>Submit</Button>
+                        <Button outline style="dark" onClick={this.handleClick} style={{height: '40px', width : '80%'}}>Submit</Button>
                     </CardFooter>
                 </Card>
                 <style jsx>{`

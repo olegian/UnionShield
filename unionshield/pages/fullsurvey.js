@@ -6,52 +6,78 @@ import Footer from '../components/Footer'
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "shards-ui/dist/css/shards.min.css"
+import ChooseEmployer from '../components/ChooseEmployer'
+import TextField from '@mui/material/TextField';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import { Card, CardFooter, Button } from 'shards-react'
 
-export default function FullSurvey({ movies }) {
-  return (
-    <div>
-      <Head>
-        <title>Full Survey | Union Shield</title>
-        <link rel="icon" href="smalllogo.png" />
-      </Head>
+export default class FullSurvey extends React.Component {
+    constructor({ employers }){
+      super({ employers });
+      this.changeArray.bind(this);
+      this.state={
+        db: employers,
+        arrScores: [-1, -1, -1, -1],
+        employerInput: '',
+      }
+    }
 
-      <Navbar />
-      <SurveyContent type="full" />
-     
-      <div className="flex flex-wrap">
-            {movies && movies.map(movie => (
-                <div>
-                <h2>{movie.title}</h2>
-                </div>
-            ))}
-      </div>
-      <Footer />
+    changeArray = (value, index) =>{
+      var temp = this.state.arrScores;
+      temp[index] = value;
+      this.setState({arrScores: temp});
+    }
 
-      <style jsx>{`
+    changeInput = (name) =>{
+      this.setState({employerInput: name});
+    }
 
-      `}</style>
+    render(){
+        return (
+          <div>
+            <Head>
+              <title>Full Survey | Union Shield</title>
+              <link rel="icon" href="smalllogo.png" />
+            </Head>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-        }
+            <Navbar />
+            <SurveyContent type="full" changeArray={this.changeArray} />
+            <ChooseEmployer changeInput={this.changeInput} db={this.state.employers} />
+            <div className="flex flex-wrap">
+                  {this.state.db && this.state.db.map(employer => (
+                      <div>
+                      <h2>{employer.employerName}</h2>
+                      </div>
+                  ))}
+            </div>
+            <Footer />
 
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+            <style jsx>{`
+
+            `}</style>
+
+            <style jsx global>{`
+              html,
+              body {
+                padding: 0;
+                margin: 0;
+              }
+
+              * {
+                box-sizing: border-box;
+              }
+            `}</style>
+          </div>
+        )
+    }
 }
 export async function getServerSideProps(context) {
   const client = await clientPromise
-  const db = client.db("sample_mflix");
+  const db = client.db("unionshield");
 
-  const data = await db.collection("movies").find({}).limit(20).toArray()
+  const data = await db.collection("employers").find({}).limit(20).toArray()
 
-  const movies = JSON.parse(JSON.stringify(data));
+  const employers = JSON.parse(JSON.stringify(data));
   // client.db() will be the default database passed in the MONGODB_URI
   // You can change the database by calling the client.db() function and specifying a database like:
   // const db = client.db("myDatabase");
@@ -59,7 +85,7 @@ export async function getServerSideProps(context) {
   // db.find({}) or any of the MongoDB Node Driver commands
 
   return {
-    props: { movies },
+    props: { employers },
   }
 }
 
