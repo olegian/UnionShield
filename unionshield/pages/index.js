@@ -14,7 +14,7 @@ export default function Home({ movies }) {
     <div>
       <Head>
         <title>Union Shield</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="smalllogo.png" />
       </Head>
 
       <Navbar />
