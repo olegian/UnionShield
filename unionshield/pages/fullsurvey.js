@@ -80,13 +80,13 @@ export default class FullSurvey extends React.Component {
               </Card>
             }
 
-            <div className="flex flex-wrap">
+            {/* <div className="flex flex-wrap">
                   {this.state.db && this.state.db.map(employer => (
                       <div>
                       <h2>{employer.employerName}</h2>
                       </div>
                   ))}
-            </div>
+            </div> */}
             
             <Footer />
 

@@ -19,14 +19,15 @@ export default function Home({ movies }) {
 
       <Navbar />
       <Landing />
+
       <HomeContent />
-      <div className="flex flex-wrap">
+      {/* <div className="flex flex-wrap">
             {movies && movies.map(movie => (
                 <div>
                 <h2>{movie.title}</h2>
                 </div>
             ))}
-      </div>
+      </div> */}
       <Footer />
 
       <style jsx>{`
