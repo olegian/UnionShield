@@ -24,6 +24,7 @@ export default class HomeContent extends React.Component {
                         </CardBody>
                     </Card>
 
+
                     <Card className="cardstyle mt-5">
                         <CardBody><CardTitle style={{fontSize:43, height:70}}>Benefits of Unionization:</CardTitle>
                         <CardSubtitle style={{fontSize:33, height:35}}>Increase in Wage</CardSubtitle>
@@ -33,6 +34,19 @@ export default class HomeContent extends React.Component {
                         <CardBody><CardSubtitle style={{fontSize:33, height:35}}>Paid leave</CardSubtitle>
                         91% of unionized workers get paid sick days while only 73% of nonunionized workers get paid sick days</CardBody>
                     </Card>
+
+
+                    <Card className="cardstyle mt-5">
+                        <CardBody style = {{height:310}}>
+                            <CardTitle style={{fontSize:43, height:70}}>Your Rights:</CardTitle>
+                            <CardSubtitle style={{fontSize:33, height:70}}>Right to be paid properly</CardSubtitle>
+                            <CardSubtitle style={{fontSize:33, height:70}}>Right to a safe and healthy workplace</CardSubtitle>
+                            <CardSubtitle style={{fontSize:33, height:70}}>Right to be treated equally</CardSubtitle>
+                            <CardSubtitle style={{fontSize:33, height:70}}>Right to join with coworkers</CardSubtitle>
+                        </CardBody>
+                    </Card>
+
+
                 </div>
                 <style jsx>{`
                     .content{
