@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
+import Navbar from '../components/Navbar'
 
 export default function Home({ movies }) {
   
@@ -11,6 +12,7 @@ export default function Home({ movies }) {
       </Head>
 
       <main>
+        <Navbar />
         <h1 className="title">
           Union Shield
         </h1>
