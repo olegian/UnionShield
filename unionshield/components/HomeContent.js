@@ -52,35 +52,35 @@ export default class HomeContent extends React.Component {
                         <CardBody>
                             <CardTitle style={{fontSize:43}}>Take Action</CardTitle>
                         </CardBody>
-                    </Card>
                     
-                    <Container>
-                        <Row>
-                            <Col>
-                                <Card className="halfcard mt-1">
-                                    <CardHeader><CardTitle>Make Amendments to the NLRB</CardTitle></CardHeader>
-                                    <CardImg style={{width: 539, height: 539}} src="nlrb-logo.png" />
-                                    <CardBody>
-                                    Push the National Labor Relations Board (NLRB) to expand access for workers to discuss 
-                                        unionization at the workplace, establish remedies when employers stall bargaining, and much more.
-                                    </CardBody>
-                                </Card>
-                            </Col>
+                    
+                        <Container className="mb-5">
+                            <Row>
+                                <Col>
+                                    <Card className="halfcard mt-1">
+                                        <CardHeader><CardTitle>Make Amendments to the NLRB</CardTitle></CardHeader>
+                                        <CardImg style={{width: 335, height: 335, alignSelf:'center'}} src="nlrb-logo.png" />
+                                        <CardBody>
+                                        Push the National Labor Relations Board (NLRB) to expand access for workers to discuss 
+                                            unionization at the workplace, establish remedies when employers stall bargaining, and much more.
+                                        </CardBody>
+                                    </Card>
+                                </Col>
 
-                            <Col>
-                                <Card className="halfcard mt-1">
-                                    <CardHeader><CardTitle>Pass Progressive Labor Legislation</CardTitle></CardHeader>
-                                    <CardImg style={{width: 539, height: 350}} src="ProAct.png" />
-                                    <CardBody>
-                                    Passing legislation like the Protecting the Right to Organize (PRO) Act of 2021, the Public Service 
-                                        Freedom to Negotiate Act, and the Public Safety Employer-Employee Cooperation Act will enable 
-                                        unions to effectively voice their opinions and guarantee that their needs are met. Vote today!
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </Container>
-                    
+                                <Col>
+                                    <Card className="halfcard mt-1">
+                                        <CardHeader><CardTitle>Pass Progressive Labor Legislation</CardTitle></CardHeader>
+                                        <CardImg style={{width: 539, height: 285}} src="ProAct.png" />
+                                        <CardBody>
+                                        Passing legislation like the Protecting the Right to Organize (PRO) Act of 2021, the Public Service 
+                                            Freedom to Negotiate Act, and the Public Safety Employer-Employee Cooperation Act will enable 
+                                            unions to effectively voice their opinions and guarantee that their needs are met. Vote today!
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Card>
 
 
                 </div>

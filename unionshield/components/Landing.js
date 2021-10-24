@@ -30,7 +30,7 @@ export default class Landing extends React.Component {
                                 <Button type="button" onClick={this.toggle} style={{height: '40px', width : '400px'}} className="mainbutton mt-5" outline theme="dark">
                                     Take the Survey
                                 </Button>
-                                <Button type="button" style={{height: '40px', width : '400px'}} className="mainbutton mt-2" outline theme="dark">
+                                <Button type="button" href="/employers" style={{height: '40px', width : '400px'}} className="mainbutton mt-2" outline theme="dark">
                                     Learn about your employer
                                 </Button>
                             </Col>

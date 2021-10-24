@@ -19,7 +19,6 @@ export default function Employers({ employers }) {
       </Head>
 
       <Navbar />
-      <Landing />
       
       <div className="flex flex-wrap m-5">
             {employers && employers.map(employer => (

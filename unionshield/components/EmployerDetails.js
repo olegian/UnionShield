@@ -27,10 +27,11 @@ export default function SurveyContent(props) {
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                     >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                    <Typography sx={{ width: '20%', flexShrink: 0 }}>
                         {props.name}
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>
+                    
+                    <Typography sx={{ color: 'text.secondary'}}>
                         ESS<sup>&#174;</sup> Score: {props.total}
                     </Typography>
                     </AccordionSummary>
@@ -40,115 +41,7 @@ export default function SurveyContent(props) {
                     </Typography>
                     <Container className="m-0 mt-3 p-0">
                         <Row>
-                            <Col className="md-4">
-                                <Container className="m-0 p-0">
-                                    <Row>
-                                        <Col className="md-3">
-                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-                                                <CircularProgress variant="determinate" value={props.ascore} />
-                                                <Box
-                                                    sx={{
-                                                    top: 0,
-                                                    left: 0,
-                                                    bottom: 0,
-                                                    right: 0,
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    }}
-                                                >
-                                                <Typography variant="caption" component="div" color="text.secondary">
-                                                {props.ascore}%
-                                                </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Col>
-                                        <Col className="md-9">
-                                            <Typography>Fair Compensation ({props.acount} reports total)</Typography>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="md-3">
-                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-                                                <CircularProgress variant="determinate" value={props.bscore} />
-                                                <Box
-                                                    sx={{
-                                                    top: 0,
-                                                    left: 0,
-                                                    bottom: 0,
-                                                    right: 0,
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    }}
-                                                >
-                                                <Typography variant="caption" component="div" color="text.secondary">
-                                                {props.bscore}%
-                                                </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Col>
-                                        <Col className="md-9">
-                                            <Typography>Fair Compensation ({props.bcount} reports total)</Typography>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="md-3">
-                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-                                                <CircularProgress variant="determinate" value={props.cscore} />
-                                                <Box
-                                                    sx={{
-                                                    top: 0,
-                                                    left: 0,
-                                                    bottom: 0,
-                                                    right: 0,
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    }}
-                                                >
-                                                <Typography variant="caption" component="div" color="text.secondary">
-                                                {props.cscore}%
-                                                </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Col>
-                                        <Col className="md-9">
-                                            <Typography>Fair Compensation ({props.ccount} reports total)</Typography>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="md-3">
-                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-                                                <CircularProgress variant="determinate" value={props.dscore} />
-                                                <Box
-                                                    sx={{
-                                                    top: 0,
-                                                    left: 0,
-                                                    bottom: 0,
-                                                    right: 0,
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    }}
-                                                >
-                                                <Typography variant="caption" component="div" color="text.secondary">
-                                                {props.dscore}%
-                                                </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Col>
-                                        <Col className="md-9">
-                                            <Typography>Fair Compensation ({props.dcount} reports total)</Typography>
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Col>
-                            <Col className="md-4">
+                            <Col sm={4}>
                                 <Box sx={{ position: 'relative', display: 'inline-flex' }}>
                                     <CircularProgress variant="determinate" size={200} thickness={6} value={props.total} />
                                     <Box
@@ -169,8 +62,113 @@ export default function SurveyContent(props) {
                                     </Box>
                                 </Box>
                             </Col>
-                            <Col className="md-4">
-
+                            <Col md="auto">
+                                <Container className="m-0 p-0">
+                                    <Row>
+                                        <Col md="auto">
+                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                                                <CircularProgress variant="determinate" value={props.ascore} />
+                                                <Box
+                                                    sx={{
+                                                    top: 0,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0,
+                                                    position: 'absolute',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    }}
+                                                >
+                                                <Typography variant="caption" component="div" color="text.secondary">
+                                                {props.ascore}%
+                                                </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Col>
+                                        <Col md="auto" align="center">
+                                            <Typography><p align="left" className="pt-2">Fair Compensation: ({props.acount} reports total)</p></Typography>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="auto">
+                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                                                <CircularProgress variant="determinate" value={props.bscore} />
+                                                <Box
+                                                    sx={{
+                                                    top: 0,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0,
+                                                    position: 'absolute',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    }}
+                                                >
+                                                <Typography variant="caption" component="div" color="text.secondary">
+                                                {props.bscore}%
+                                                </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Typography><p align="left" className="pt-2">Health and Safety: ({props.bcount} reports total)</p></Typography>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="auto">
+                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                                                <CircularProgress variant="determinate" value={props.cscore} />
+                                                <Box
+                                                    sx={{
+                                                    top: 0,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0,
+                                                    position: 'absolute',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    }}
+                                                >
+                                                <Typography variant="caption" component="div" color="text.secondary">
+                                                    {props.cscore}%
+                                                </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Typography><p align="left" className="pt-2"> Workplace Equality: ({props.ccount} reports total) </p></Typography>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="auto">
+                                            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                                                <CircularProgress variant="determinate" value={props.dscore} />
+                                                <Box
+                                                    sx={{
+                                                    top: 0,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0,
+                                                    position: 'absolute',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    }}
+                                                >
+                                                <Typography variant="caption" component="div" color="text.secondary">
+                                                {props.dscore}%
+                                                </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Col>
+                                        <Col md="auto">
+                                            <Typography><p align='left' className="pt-2">Unionization: ({props.dcount} reports total)</p></Typography>
+                                        </Col>
+                                    </Row>
+                                </Container>
                             </Col>
                         </Row>
                     </Container>
