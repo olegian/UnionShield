@@ -6,52 +6,116 @@ import Footer from '../components/Footer'
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "shards-ui/dist/css/shards.min.css"
+import ChooseEmployer from '../components/ChooseEmployer'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import { Card, CardFooter, Button } from 'shards-react'
+import { calculateObjectSize } from 'bson'
 
-export default function FullSurvey({ movies }) {
-  return (
-    <div>
-      <Head>
-        <title>Full Survey | Union Shield</title>
-        <link rel="icon" href="smalllogo.png" />
-      </Head>
+export default class WorkplaceEquality extends React.Component {
+    constructor({ employers }){
+      super({ employers });
+      this.changeArray.bind(this);
+      this.state={
+        db: employers,
+        arrScores: [-1, -1, -1, -1],
+        employerInput: '',
+        showResults: false,
+      }
+    }
 
-      <Navbar />
-      <SurveyContent type="workplaceEquality" />
-     
-      <div className="flex flex-wrap">
-            {movies && movies.map(movie => (
-                <div>
-                <h2>{movie.title}</h2>
-                </div>
-            ))}
-      </div>
-      <Footer />
+    changeArray = (value, index) =>{
+      var temp = this.state.arrScores;
+      temp[index] = value;
+      this.setState({arrScores: temp});
+    }
 
-      <style jsx>{`
+    changeInput = (name) =>{
+      this.setState({employerInput: 'Amazon'});
+      this.calculate();
+    }
 
-      `}</style>
+    calculate = () =>{
+      this.setState({
+        showResults: true,
+      })
+    }
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-        }
+    render(){
+        return (
+          <div>
+            <Head>
+              <title>Workplace Equality Survey | Union Shield</title>
+              <link rel="icon" href="smalllogo.png" />
+            </Head>
 
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+            <Navbar />
+            <SurveyContent type="workplaceEquality" changeArray={this.changeArray} />
+            {/* <ChooseEmployer changeInput={this.changeInput} db={this.state.employers} /> */}
+            <Card className="m-5 p-5">
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Employer</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Age"
+                >
+                  {this.state.db && this.state.db.map(employer => (
+                        <MenuItem value={employer.employerName}>{employer.employerName}</MenuItem>
+                    ))}
+                </Select>
+              </FormControl>
+              <Button onClick={this.changeInput}>Submit Report</Button>
+            </Card>
+
+            {this.state.showResults &&
+              <Card className="content m-5 p-5">
+                <h2>Your Workplace Equality score for {this.state.employerInput} is:
+                {' ' + parseInt(100 * ((this.state.arrScores[2])+3)/36)}%</h2>
+                <Button>View current ESS scores for {this.state.employerInput}</Button>
+              </Card>
+            }
+
+            {/* <div className="flex flex-wrap">
+                  {this.state.db && this.state.db.map(employer => (
+                      <div>
+                      <h2>{employer.employerName}</h2>
+                      </div>
+                  ))}
+            </div> */}
+            
+            <Footer />
+
+            <style jsx>{`
+
+            `}</style>
+
+            <style jsx global>{`
+              html,
+              body {
+                padding: 0;
+                margin: 0;
+              }
+
+              * {
+                box-sizing: border-box;
+              }
+            `}</style>
+          </div>
+        )
+    }
 }
 export async function getServerSideProps(context) {
   const client = await clientPromise
-  const db = client.db("sample_mflix");
+  const db = client.db("unionshield");
 
-  const data = await db.collection("movies").find({}).limit(20).toArray()
+  const data = await db.collection("employers").find({}).limit(20).toArray()
 
-  const movies = JSON.parse(JSON.stringify(data));
+  const employers = JSON.parse(JSON.stringify(data));
   // client.db() will be the default database passed in the MONGODB_URI
   // You can change the database by calling the client.db() function and specifying a database like:
   // const db = client.db("myDatabase");
@@ -59,7 +123,7 @@ export async function getServerSideProps(context) {
   // db.find({}) or any of the MongoDB Node Driver commands
 
   return {
-    props: { movies },
+    props: { employers },
   }
 }
 
