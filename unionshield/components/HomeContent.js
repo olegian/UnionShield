@@ -8,9 +8,12 @@ export default class HomeContent extends React.Component {
                 <div className="content">
                     <Card className="cardstyle">
                         <CardBody>
-                            <CardTitle>Card Title</CardTitle>
-                            <CardSubtitle>Card subtitle</CardSubtitle>
-                            Nunc quis nisl ac justo elementum sagittis in quis justo.
+                            <CardTitle>The labor movement is in full swing.</CardTitle>
+                            <CardSubtitle>The time to act is now.</CardSubtitle>
+                            As the world returns to a pre-pandemic economy, we must use this precious moment in history to ensure workers across the country can return to a safe and equitable workplace.
+                            Unionization enables workers like you to get higher wages, better healthcare benefits, more paid sick days, and a safer work environment.
+                            We must pass acts like the PRO Act and the Public Safety Employer-Employee Cooperation Act to arm us with the tools to effectively voice our needs and guarantee that they are met.
+                            Use Union Shield as a tool to determine areas where your employer needs to improve and as a platform to connect with other discontent workers to push for change in your company.
                         </CardBody>
                     </Card>
                     <h1>
